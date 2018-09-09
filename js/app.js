@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const submitForm = document.querySelector('#form').reset();
   form.addEventListener('submit', handleSubmitForm);
+
+  const deleteAll = document.querySelector('#deleteAll');
+  deleteAll.addEventListener('click', handleDeleteAllData);
 });
 
 
@@ -38,3 +41,20 @@ const handleSubmitForm = ( event ) => {
   event.target.reset();
 
 }
+
+const handleDeleteAllData = () => {
+  const tablePersonalData1 = document.querySelector('.personal-information');
+  const tablePersonalData2 = document.querySelector('.personal-information');
+  const tablePersonalData3 = document.querySelector('.personal-information');
+  const tablePersonalData4 = document.querySelector('.personal-information');
+  console.log(tablePersonalData1, tablePersonalData2, tablePersonalData3, tablePersonalData4);
+
+  while(tablePersonalData1.firstChild,              tablePersonalData2.firstChild,
+    tablePersonalData3.firstChild,
+    tablePersonalData4.firstChild) {
+      tablePersonalData1.removeChild(tablePersonalData1.firstChild);
+      tablePersonalData2.removeChild(tablePersonalData2.firstChild);
+      tablePersonalData3.removeChild(tablePersonalData3.firstChild);
+      tablePersonalData4.removeChild(tablePersonalData4.firstChild);
+    }
+  }
